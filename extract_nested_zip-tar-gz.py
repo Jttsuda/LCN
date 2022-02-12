@@ -14,20 +14,20 @@ def rename_file():
     global counter
     global new_file
     new_file = "./flag" + str(counter)
-    if os.path.isfile('C:/Users/Suda/Desktop/Unzipping/flag.zip'):
+    if os.path.isfile('./flag.zip'):
         os.rename('flag.zip', new_file[2:] + ".zip")
         new_file += ".zip"
-    elif os.path.isfile('C:/Users/Suda/Desktop/Unzipping/flag.tar'):
+    elif os.path.isfile('./flag.tar'):
         os.rename('flag.tar', new_file[2:] + ".tar")
         new_file += ".tar"
-    elif os.path.isfile('C:/Users/Suda/Desktop/Unzipping/flag.gz'):
+    elif os.path.isfile('./flag.gz'):
         os.rename('flag.gz', new_file[2:] + ".gz")
         new_file += ".gz"
     counter += 1
 
 def delete_previous_file():
     global counter
-    path_name = 'C:/Users/Suda/Desktop/Unzipping/flag' + str(counter - 2)
+    path_name = './flag' + str(counter - 2)
     if os.path.isfile(path_name + '.zip'):
         os.remove(path_name + '.zip')
     elif os.path.isfile(path_name + '.tar'):
@@ -53,7 +53,7 @@ while True:
                 shutil.copyfileobj(f_in, f_out)
                 f_in.close()
                 f_out.close()
-                extension = "." + filetype.guess('C:/Users/Suda/Desktop/Unzipping/flag').extension
+                extension = "." + filetype.guess('./flag').extension
                 os.rename('flag', 'flag' + str(counter) + extension)
                 new_file = "./flag" + str(counter) + extension
                 counter += 1
