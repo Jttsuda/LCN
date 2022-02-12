@@ -5,6 +5,8 @@ import shutil
 import os
 import filetype
 
+# Put this file in the same directory as "flag0.zip" and run it
+
 counter = 1
 new_file = "./flag0.zip"
 
