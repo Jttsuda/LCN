@@ -28,6 +28,7 @@ def rename_file():
 def delete_previous_file():
     global counter
     path_name = './flag' + str(counter - 2)
+    if path_name == './flag0': return
     if os.path.isfile(path_name + '.zip'):
         os.remove(path_name + '.zip')
     elif os.path.isfile(path_name + '.tar'):
